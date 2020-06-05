@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import openpyxl
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='')
 
 @app.route('/')
 def entering():
@@ -47,6 +47,8 @@ def finding(keyword=None):
     temp_db.remove(temp_db_ws1)
     temp_db_ws = temp_db.create_sheet('find')
 
+    numberOfcount = len(finding_contents)
+
     rewrite_count1 = 0
     rewrite_count2 = 0
     rewrite_count3 = 0
@@ -65,7 +67,7 @@ def finding(keyword=None):
 
     temp_db.save('./Temp_DB.xlsx')
 
-    return render_template('home_find.html', test=finding_name, test2=finding_page, test3=finding_contents)
+    return render_template('home_find.html', test=finding_name, test2=finding_page, test3=finding_contents, findcount=numberOfcount)
 
 @app.route('/detailfind', methods=['POST'])
 def detailsearching(detail_keyword=None):
