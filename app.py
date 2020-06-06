@@ -5,7 +5,13 @@ app = Flask(__name__, static_folder='static', static_url_path='')
 
 @app.route('/')
 def entering():
-    return render_template('home.html')
+    kosha_listdata = open('x.txt', 'r', encoding='utf-8')
+    koshalist = kosha_listdata.readlines()
+    guideList = []
+    for view_list in koshalist:
+        guideList.append(view_list.replace('\n',''))
+
+    return render_template('home.html', guidelists=guideList)
 
 @app.route('/find', methods=['POST'])
 def finding(keyword=None):
