@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 import openpyxl
 
 app = Flask(__name__, static_folder='static', static_url_path='')
@@ -196,6 +196,11 @@ def detailsearching(detail_keyword=None):
          test3=detail_find_contents, 
          adress=link_link)
 
+@app.route('/download/<path:file>')
+def download(file):
+    guide_n = file
+    guide_a = 'templates/guide/'+guide_n
+    return send_file(guide_a)
     
 if __name__ == '__main__':
     app.run(debug=True)

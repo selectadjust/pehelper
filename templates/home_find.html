@@ -11,7 +11,7 @@
     <style>
         .result {
             display: grid;
-            grid-template-columns: 6fr 1fr 16fr 1fr;
+            grid-template-columns: 6fr 1fr 14fr 1fr;
             
         }
     
@@ -76,7 +76,7 @@
         <div5>
           <p style='text-align:left;'><storng>링크</storng></p>
           {% for links in adress %}
-          <div class='contents'><a href={{links}} download>다운</a></div>
+            <div class='contents'><a href='/download/{{links}}'>열기</a></div>
           {% endfor %}
         </div5>
     </div1>
