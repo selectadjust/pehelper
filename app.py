@@ -199,8 +199,8 @@ def detailsearching(detail_keyword=None):
 @app.route('/download/<path:file>')
 def download(file):
     guide_n = file
-    guide_a = 'templates/guide/'+guide_n
+    guide_a = 'app/templates/guide/'+guide_n
     return send_file(guide_a)
     
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
