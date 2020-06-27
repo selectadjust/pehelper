@@ -11,7 +11,7 @@
     <style>
         .result {
             display: grid;
-            grid-template-columns: 6fr 1fr 16fr;
+            grid-template-columns: 6fr 1fr 16fr 1fr;
             
         }
     
@@ -73,6 +73,12 @@
           <div class='contents'>{{list3}}</div>
           {% endfor %}
         </div4>
+        <div5>
+          <p style='text-align:left;'><storng>링크</storng></p>
+          {% for links in adress %}
+          <div class='contents'><a href={{links}} download>다운</a></div>
+          {% endfor %}
+        </div5>
     </div1>
     <div style="text-align: center;">
         <p style="font-size: 10px;">플랜트 건설 엔지니어의 <storng style="color: red;">정시 퇴근</storng>을 위하여!</p>

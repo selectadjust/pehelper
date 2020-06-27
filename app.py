@@ -73,7 +73,41 @@ def finding(keyword=None):
 
     temp_db.save('./Temp_DB.xlsx')
 
-    return render_template('home_find.html', test=finding_name, test2=finding_page, test3=finding_contents, findcount=numberOfcount)
+    link_db = openpyxl.load_workbook('./link.xlsx')
+    link_db = link_db.get_sheet_by_name('Sheet1')
+
+    link_name = []
+    link_path = []
+
+    for link_write in link_db.rows:
+        link_name.append(str(link_write[0].value))
+        link_path.append(str(link_write[1].value))
+    
+     
+
+    link_data = {
+        
+    }
+
+    link_cont = 0
+
+    for link_dic in link_name:
+        link_data[link_name[link_cont]] = link_path[link_cont]
+        link_cont = link_cont + 1
+
+    link_link = []
+
+    for linkserach in finding_name:
+        link_link.append(link_data.get(linkserach))
+
+
+    return render_template(
+        'home_find.html', 
+        test=finding_name, 
+        test2=finding_page, 
+        test3=finding_contents, 
+        findcount=numberOfcount, 
+        adress=link_link)
 
 @app.route('/detailfind', methods=['POST'])
 def detailsearching(detail_keyword=None):
@@ -128,8 +162,40 @@ def detailsearching(detail_keyword=None):
 
     searching_list.save('./Temp_DB.xlsx')
 
-    return render_template('home_find.html', test=detail_find_name, test2=detail_find_page, test3=detail_find_contents)
+    link_db = openpyxl.load_workbook('./link.xlsx')
+    link_db = link_db.get_sheet_by_name('Sheet1')
+
+    link_name = []
+    link_path = []
+
+    for link_write in link_db.rows:
+        link_name.append(str(link_write[0].value))
+        link_path.append(str(link_write[1].value))
+    
+     
+
+    link_data = {
+        
+    }
+
+    link_cont = 0
+
+    for link_dic in link_name:
+        link_data[link_name[link_cont]] = link_path[link_cont]
+        link_cont = link_cont + 1
+
+    link_link = []
+
+    for linkserach in detail_find_name:
+        link_link.append(link_data.get(linkserach))
+
+    return render_template(
+        'home_find.html',
+         test=detail_find_name, 
+         test2=detail_find_page, 
+         test3=detail_find_contents, 
+         adress=link_link)
 
     
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
