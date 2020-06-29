@@ -202,21 +202,13 @@ def download(file):
     guide_a = 'templates/Guide/'+guide_n
     return send_file(guide_a)
 
-@app.route('/favicon')
-def favicon():
-    return send_file('/favicon.ico')
-
-@app.route('/robots')
-def robots():
-    return send_file('/robots.txt')
-
 @app.route('/favicon.ico')
 def favicon():
-    return send_file('/favicon.ico')
+    return send_file('favicon.ico')
 
 @app.route('/robots.txt')
 def robots():
-    return send_file('/robots.txt')
+    return send_file('robots.txt')
 
     
 if __name__ == '__main__':
