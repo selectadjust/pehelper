@@ -3,6 +3,7 @@ import openpyxl
 
 app = Flask(__name__, static_folder='static', static_url_path='')
 
+#main loading code
 @app.route('/')
 def entering():
     kosha_listdata = open('x.txt', 'r', encoding='utf-8')
@@ -13,6 +14,7 @@ def entering():
 
     return render_template('home.html', guidelists=guideList)
 
+# Search code
 @app.route('/find', methods=['POST'])
 def finding(keyword=None):
     if request.method == 'POST':
@@ -31,6 +33,7 @@ def finding(keyword=None):
     guide_page = []
     guide_contents = []
 
+    #empty list add guide contents
     for contents in data_base.rows:
         guide_name.append(str(contents[0].value))
         guide_page.append(str(contents[1].value))
@@ -40,6 +43,7 @@ def finding(keyword=None):
     finding_page = []
     finding_contents = []
 
+    #finding contents added to temp database for detail seraching
     count = 0    
     for searchWord in guide_contents:
         count = count + 1
@@ -196,16 +200,19 @@ def detailsearching(detail_keyword=None):
          test3=detail_find_contents, 
          adress=link_link)
 
+#kosha guide downlaod code
 @app.route('/download/<path:file>')
 def download(file):
     guide_n = file
     guide_a = 'templates/Guide/'+guide_n
     return send_file(guide_a)
 
+#favicon loaidng code
 @app.route('/favicon.ico')
 def favicon():
     return send_file('favicon.ico')
 
+#robots loading code
 @app.route('/robots.txt')
 def robots():
     return send_file('robots.txt')
