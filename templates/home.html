@@ -12,20 +12,18 @@
 </head>
 <style>
 
-    .findList {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 350x;
-    }
+    
 </style>
 <body>
     <br>
     <h1 style="text-align: center;">KOSHA GUIDE FINDER</h1>
     <h2 style="text-align: center;">BETA</h2>
     <div0 style="text-align:center;">
+        
         <form method="POST" action="/find">
-            <input type="text" name="keyword" style="width: 400px;"><button type="submit">검색</button>
+            <center>
+                <input type="text" name="keyword" style="width: 300px;"><button type="submit">검색</button>
+            </center>
         </form>
     </div0>
     <div style="text-align: center;">
@@ -34,10 +32,14 @@
         <a href="https://qlab.tistory.com/2">사용법 보기</a><br>
         <img src='https://img.khan.co.kr/news/2017/02/19/l_2017022001002603300213961.jpg'>
         <div>
+            <div style="text-align: center;">
             <p style="font-size: 15px;">현재 등록되어 있는 안전설계 가이드 목록</p>
+            </div>
             {% for guideview in guidelists %}
-            <li>{{guideview}}</li>
+            <div style="text-align: center">
+            <li style="margin-left: 1rem;">{{guideview}}</li>
             {% endfor %}
+            </div>
         </div>
         <div>
             <ins class="kakao_ad_area" style="display:none;" 
@@ -46,10 +48,10 @@
              data-ad-height  = "50"></ins> 
             <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
         </div>
-        <p style="font-size: 10px;">플랜트 건설 엔지니어의 <storng style="color: red;">정시 퇴근</storng>을 위하여!</p>
-        <p style="font-size: 10px;">당신의 빠른 퇴근만을 위하는 QLab</p>
-        <p style="font-size: 10px;">Made by kblee</p>
-        <p style="font-size: 10px;">E-mail : selectadjust@kakao.com</p>
+        <p style="font-size: 10px; text-align: center;">플랜트 건설 엔지니어의 <storng style="color: red;">정시 퇴근</storng>을 위하여!</p>
+        <p style="font-size: 10px; text-align: center;">당신의 빠른 퇴근만을 위하는 QLab</p>
+        <p style="font-size: 10px; text-align: center;">Made by kblee</p>
+        <p style="font-size: 10px; text-align:center">E-mail : selectadjust@kakao.com</p>
     </div>
 
 </body>
