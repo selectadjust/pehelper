@@ -9,10 +9,12 @@
     <title>KOSHA(코샤) GUIDE 검색</title>
 </head>
     <style>
+
         .result {
             display: grid;
-            grid-template-columns: 14% 4% 78% 4%;
+            grid-template-columns: 14% 6% 73% 6%;
             text-align: center;
+            font-size: 1rem;
             
         }
     
@@ -20,7 +22,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            font-size: 0.975rem;
+            font-size: 0.975em;
             width: 100%;
             line-height: 20px;
             text-align: left;
@@ -30,7 +32,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            font-size: 0.937rem;
+            font-size: 0.937em;
             width: 100%;
             line-height: 20px;
         }
@@ -39,7 +41,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            font-size: 0.937rem;
+            font-size: 0.937em;
             width: 100%;
             line-height: 20px;
             text-align: left;
@@ -49,7 +51,7 @@
           overflow:hidden;
           text-overflow: ellipsis;
           white-space: norwrap;
-          font-size: 0.937rem;
+          font-size: 0.937em;
           width: 100%;
           line-height: 20px;
           text-align: center;
@@ -82,7 +84,7 @@
           {% endfor %}
         </div3>
         <div4>
-          <p style='text-align:left;'><storng>내용</storng></p>
+          <p style='text-align:center;'><storng>내용</storng></p>
           {% for list3 in test3 %}
           <div class='contents'>{{list3}}</div>
           {% endfor %}
