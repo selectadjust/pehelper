@@ -23,7 +23,7 @@
         
         <form method="POST" action="/find">
             <center>
-                <input type="text" name="keyword" style="width: 300px;"><button type="submit">검색</button>
+                <input type="text" name="keyword" style="width: 300px;"><button type="submit" onclick='popup()'>검색</button>
             </center>
         </form>
     </div0>
@@ -38,7 +38,7 @@
             </div>
             {% for guideview in guidelists %}
             <div style="text-align: center">
-            <li style="margin-left: 1rem;">{{guideview}}</li>
+            <li style="margin-left: 1rem; overflow: hidden; text-overflow: ellipsis; white-space:nowrap;">{{guideview}}</li>
             {% endfor %}
             </div>
         </div>
@@ -54,6 +54,11 @@
         <p style="font-size: 10px; text-align: center;">Made by kblee</p>
         <p style="font-size: 10px; text-align:center">E-mail : selectadjust@kakao.com</p>
     </div>
+    <script>    
+        function popup() {
+            alert('20년 12월 29일로 변경된 개정 및 추가 된 KOSHA GUIDE는 \n현재 업데이트 되지 않았습니다.\n확인 버튼을 누르시면 검색 결과를 확인 할 수 있습니다.');
+        }
+    </script>
 
 </body>
 </html>

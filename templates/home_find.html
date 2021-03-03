@@ -65,7 +65,7 @@
     <div0 style="text-align:center;">
         <center>
         <form method="POST" action="/detailfind">
-            <input type="text" name="detail_keyword" style="width: 300px;"><button type="submit">상세검색</button><input type="button" value="신규검색" onclick="location.href='/'">
+            <input type="text" name="detail_keyword" style="width: 300px;"><button type="submit" onclick="popup()">상세검색</button><input type="button" value="신규검색" onclick="location.href='/'">
         </form>
         </center>
     </div0>
@@ -108,5 +108,10 @@
       <p style="font-size: 10px;">Made by kblee</p>
       <p style="font-size: 10px;">E-mail : selectadjust@kakao.com</p>
     </div>
+    <script>
+      function popup() {
+        alret('20년 12월 29일로 변경된 개정 및 추가 된 KOSHA GUIDE는 \n현재 업데이트 되지 않았습니다.\n확인 버튼을 누르시면 검색 결과를 확인 할 수 있습니다.');
+      }
+    </script>
 </body>
 </html>
